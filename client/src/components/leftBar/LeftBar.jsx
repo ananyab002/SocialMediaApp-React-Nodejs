@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import loginImage from '../images/loginImage.jpg'
 import png1 from '../images/1.png'
 import png2 from '../images/2.png'
@@ -14,15 +14,18 @@ import png11 from '../images/11.png'
 import png12 from '../images/12.png'
 import png13 from '../images/13.png'
 import './leftBar.scss'
+import { AuthContext } from "../../context/authContext";
 
 function LeftBar() {
+const {currentUser}=useContext(AuthContext)
+
     return (
         <div className="leftBar">
             <div className="container">
                 <div className="menu">
                     <div className="user">
-                        <img src={loginImage}></img>
-                        <span>Ananya</span>
+                        <img src={currentUser.profilePic}></img>
+                        <span>{currentUser.name}</span>
                     </div>
                     <div className="item">
                         <img src={png1}></img>

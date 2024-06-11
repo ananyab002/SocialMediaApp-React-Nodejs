@@ -1,25 +1,13 @@
 import React from "react";
 import "./home.scss"
+import Story from "../stories/Story";
+import Posts from "../posts/Posts";
 
 function Home() {
     return (
-        <div className="home">Home
-            <h1>Home</h1>
-            <h1>Home</h1>
-            <h1>Home</h1>
-            <h1>Home</h1>
-            <h1>Home</h1>
-            <h1>Home</h1>
-            <h1>Home</h1>
-            <h1>Home</h1>
-            <h1>Home</h1>
-            <h1>Home</h1>
-            <h1>Home</h1>
-            <h1>Home</h1>
-            <h1>Home</h1>
-            <h1>Home</h1>
-            <h1>Home</h1>
-            <h1>Home</h1>
+        <div className="home">
+            <Story />
+            <Posts/>
         </div>
         
     )
