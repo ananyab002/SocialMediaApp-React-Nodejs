@@ -12,6 +12,8 @@
     top: 0;
     background-color: themed("bg");
     color: themed("textColor");
+    z-index: 1;
+
     .left{
         display: flex;
         align-items: center;
@@ -34,6 +36,9 @@
                  width: 500px;
                  background-color: transparent;
                  color: themed("textColor");
+            }
+            input:focus {
+            outline: none;
             }
         }
     }

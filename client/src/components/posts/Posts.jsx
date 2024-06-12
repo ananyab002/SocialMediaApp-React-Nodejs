@@ -9,7 +9,8 @@ const Posts = () => {
       name: "Ananya",
       userId:1,
       profilePic: registerPage,
-      desc:"Its good to socialize. Communication is important in everyone's life"
+      desc:"Its good to socialize. Communication is important in everyone's life",
+      img:registerPage
         },
         {
       id: 2,
