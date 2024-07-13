@@ -1,33 +1,24 @@
-import "./posts.scss"
-import registerPage from "../images/registerPage.jpg"
-import Post from "../post/Post"
+import "./posts.scss";
+import registerPage from "../images/registerPage.jpg";
+import Post from "../post/Post";
+import { makeRequest } from "../../axios";
+import { useQuery } from "@tanstack/react-query";
 
 const Posts = () => {
-    const posts = [
-              {
-      id: 1,
-      name: "Ananya",
-      userId:1,
-      profilePic: registerPage,
-      desc:"Its good to socialize. Communication is important in everyone's life",
-      img:registerPage
-        },
-        {
-      id: 2,
-       name: "Ananya",
-       userId:1,
-       profilePic: registerPage,
-       desc:"Its good to socialize. Communication is important in everyone's life"
-        },
-        
-    ]
-    return (
-        <div className="posts">
-            {posts.map(post => (
-                <Post post={post} />
-            ))}
-        </div>
-    )
-}
+  const { isLoading, err, posts } = useQuery(["posts"], () => {
+    makeRequest.get("/posts").then((res) => {
+      return res.data;
+    });
+  });
+  return (
+    <div className="posts">
+      {err
+        ? "Something went wrong"
+        : isLoading
+        ? "loading"
+        : posts.map((post) => <Post post={post} />)}
+    </div>
+  );
+};
 
-export default Posts
+export default Posts;
